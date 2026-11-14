@@ -1,0 +1,47 @@
+package com.skinzoneadmin.skinzonenaturel.Entities;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="Client")
+public class Client {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private int ClientID;
+    @Column(unique=true, nullable=false)
+    private String ClientName;
+    @Column(unique=false, nullable=false)
+    private String Surname;
+    @Column(unique=true, nullable=false,length = 10)
+    private String ClientPhone;
+
+    public int getClientID() {
+        return ClientID;
+    }
+
+
+
+    public String getClientName() {
+        return ClientName;
+    }
+
+    public void setClientName(String clientName) {
+        ClientName = clientName;
+    }
+
+    public String getSurname() {
+        return Surname;
+    }
+
+    public void setSurname(String surname) {
+        Surname = surname;
+    }
+
+    public String getClientPhone() {
+        return ClientPhone;
+    }
+
+    public void setClientPhone(String clientPhone) {
+        ClientPhone = clientPhone;
+    }
+}
