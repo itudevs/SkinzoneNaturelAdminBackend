@@ -1,4 +1,4 @@
-package com.skinzoneadmin.skinzonenaturel.structures;
+package main.java.structures;
 
 public enum VisitType {
     BOOKING,

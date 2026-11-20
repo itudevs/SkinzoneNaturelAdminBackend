@@ -1,7 +1,7 @@
-package com.skinzoneadmin.skinzonenaturel.Entities;
+package main.java.Entities;
 
-import com.skinzoneadmin.skinzonenaturel.structures.PAYMENTMETHODS;
-import com.skinzoneadmin.skinzonenaturel.structures.VisitType;
+import main.java.structures.PAYMENTMETHODS;
+import main.java.structures.VisitType;
 import jakarta.persistence.*;
 
 @Entity

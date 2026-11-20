@@ -1,6 +1,5 @@
-package com.skinzoneadmin.skinzonenaturel.Entities;
+package main.java.Entities;
 
-import com.skinzoneadmin.skinzonenaturel.structures.ServiceType;
 import jakarta.persistence.*;
 
 @Entity

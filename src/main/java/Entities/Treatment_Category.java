@@ -1,4 +1,4 @@
-package com.skinzoneadmin.skinzonenaturel.Entities;
+package main.java.Entities;
 
 import jakarta.persistence.*;
 
