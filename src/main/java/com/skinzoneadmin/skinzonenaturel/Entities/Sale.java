@@ -13,19 +13,29 @@ public class Sale {
 
     @Column(unique=false, nullable=false)
     private PAYMENTMETHODS PaymentMethod;
-
+    //might need to remove not needed
     @Column(unique = false,nullable = false)
     private VisitType  VisitType;
     @Column(unique = false, nullable=false)
     private Double SaleTotal;
     @ManyToOne
     private Transaction Transaction;
+    @ManyToOne
+    @JoinColumn(name = "Client_ClientID")
+    private Client client;
+
+
 
     public int getSaleID() {
         return SaleID;
     }
+    public Client getClient() {
+        return client;
+    }
 
-
+    public void setClient(Client client) {
+        this.client = client;
+    }
 
     public Transaction getTransaction() {
         return Transaction;

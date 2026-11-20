@@ -8,14 +8,14 @@ public class Sale_Line {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int Sale_LineID;
-
+    //FK
     @ManyToOne(fetch=FetchType.LAZY)
     private Sale Sale;
-
+    //FK
     @Column(unique=false, nullable=true)
     @ManyToOne(fetch=FetchType.LAZY)
-    private Product Product;
+    private Service Service;
 
     @Column(unique=false, nullable=false)
-    private String Sale_Line_Description;
+    private Double Amount;
 }
