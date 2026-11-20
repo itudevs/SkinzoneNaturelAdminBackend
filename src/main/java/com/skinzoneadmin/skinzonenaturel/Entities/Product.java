@@ -25,7 +25,9 @@ public class Product {
     private int Quantity;
 
     @Column(unique = false,nullable = false)
-    private Double ClinicalPrice;
+    private Float ClinicalPrice;
+
+
 
     public int getProductID() {
         return ProductID;
@@ -33,11 +35,11 @@ public class Product {
 
 
 
-    public Double getClinicalPrice() {
+    public Float getClinicalPrice() {
         return ClinicalPrice;
     }
 
-    public void setClinicalPrice(Double clinicalPrice) {
+    public void setClinicalPrice(Float clinicalPrice) {
         ClinicalPrice = clinicalPrice;
     }
 

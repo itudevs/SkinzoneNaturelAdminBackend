@@ -15,7 +15,7 @@ public class Expense {
     @Column(unique = false,nullable = false)
     private int Quantity;
     @Column(unique = false,nullable = false)
-    private Double PricePerItem;
+    private Float PricePerItem;
 
     //category as per requirement is not needed
     //total price can be calculated on need
@@ -36,11 +36,11 @@ public class Expense {
         Transaction = transaction;
     }
 
-    public Double getPricePerItem() {
+    public Float getPricePerItem() {
         return PricePerItem;
     }
 
-    public void setPricePerItem(Double pricePerItem) {
+    public void setPricePerItem(Float pricePerItem) {
         PricePerItem = pricePerItem;
     }
 

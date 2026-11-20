@@ -17,7 +17,7 @@ public class Sale_Line {
     private Service Service;
 
     @Column(unique=false, nullable=false)
-    private Double Amount;
+    private Float Amount;
 
     public int getSale_LineID() {
         return Sale_LineID;
@@ -40,11 +40,11 @@ public class Sale_Line {
         Service = service;
     }
 
-    public Double getAmount() {
+    public Float getAmount() {
         return Amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(Float amount) {
         Amount = amount;
     }
 }

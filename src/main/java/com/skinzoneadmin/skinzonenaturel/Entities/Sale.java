@@ -17,7 +17,7 @@ public class Sale {
     @Column(unique = false,nullable = false)
     private VisitType  VisitType;
     @Column(unique = false, nullable=false)
-    private Double SaleTotal;
+    private Float SaleTotal;
     @ManyToOne
     private Transaction Transaction;
     @ManyToOne
@@ -45,11 +45,11 @@ public class Sale {
         Transaction = transaction;
     }
 
-    public Double getSaleTotal() {
+    public Float getSaleTotal() {
         return SaleTotal;
     }
 
-    public void setSaleTotal(Double saleTotal) {
+    public void setSaleTotal(Float saleTotal) {
         SaleTotal = saleTotal;
     }
 

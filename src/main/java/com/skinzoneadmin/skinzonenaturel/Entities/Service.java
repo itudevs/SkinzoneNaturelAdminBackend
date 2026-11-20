@@ -13,10 +13,10 @@ public class Service {
     @Column(unique=false, nullable=false)
     private String Name;
     @Column(unique=false, nullable=false)
-    private Double Discount;
+    private Float Discount;
 
     @Column(unique=false, nullable=false)
-    private Double RetailPrice;
+    private Float RetailPrice;
 
     @Column(unique=false, nullable=false)
     private ServiceType Type;
@@ -45,19 +45,19 @@ public class Service {
         Type = type;
     }
 
-    public Double getRetailPrice() {
+    public Float getRetailPrice() {
         return RetailPrice;
     }
 
-    public void setRetailPrice(Double retailPrice) {
+    public void setRetailPrice(Float retailPrice) {
         RetailPrice = retailPrice;
     }
 
-    public Double getDiscount() {
+    public Float getDiscount() {
         return Discount;
     }
 
-    public void setDiscount(Double discount) {
+    public void setDiscount(Float discount) {
         Discount = discount;
     }
 
