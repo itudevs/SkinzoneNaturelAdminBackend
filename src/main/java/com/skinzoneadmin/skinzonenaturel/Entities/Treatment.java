@@ -13,6 +13,14 @@ public class Treatment {
     @ManyToOne(cascade = CascadeType.ALL)
     private Treatment_Category TreatmentCategory;
 
+    public Treatment_Category getTreatmentCategory() {
+        return TreatmentCategory;
+    }
+
+    public void setTreatmentCategory(Treatment_Category treatmentCategory) {
+        TreatmentCategory = treatmentCategory;
+    }
+
     @OneToOne
     private Service service;
 

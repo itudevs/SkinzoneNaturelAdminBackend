@@ -18,4 +18,33 @@ public class Sale_Line {
 
     @Column(unique=false, nullable=false)
     private Double Amount;
+
+    public int getSale_LineID() {
+        return Sale_LineID;
+    }
+
+
+    public Sale getSale() {
+        return Sale;
+    }
+
+    public void setSale(Sale sale) {
+        Sale = sale;
+    }
+
+    public Service getService() {
+        return Service;
+    }
+
+    public void setService(Service service) {
+        Service = service;
+    }
+
+    public Double getAmount() {
+        return Amount;
+    }
+
+    public void setAmount(Double amount) {
+        Amount = amount;
+    }
 }

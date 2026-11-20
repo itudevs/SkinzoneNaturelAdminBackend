@@ -8,10 +8,10 @@ public class Client {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int ClientID;
-    @Column(unique=true, nullable=false)
+    @Column(unique=false, nullable=false)
     private String ClientName;
     @Column(unique=false, nullable=false)
-    private String Surname;
+    private String ClientSurname;
     @Column(unique=true, nullable=false,length = 10)
     private String ClientPhone;
 
@@ -29,12 +29,12 @@ public class Client {
         ClientName = clientName;
     }
 
-    public String getSurname() {
-        return Surname;
+    public String getClientSurname() {
+        return ClientSurname;
     }
 
-    public void setSurname(String surname) {
-        Surname = surname;
+    public void setClientSurname(String surname) {
+        ClientSurname = surname;
     }
 
     public String getClientPhone() {
