@@ -16,6 +16,16 @@ public class User {
     private String Surname;
     @Column(unique=false,nullable=false,length = 10)
     private String ContactNumber;
+    @Column(unique=false,nullable=false)
+    private boolean Active;
+
+    public boolean isActive() {
+        return Active;
+    }
+
+    public void setActive(boolean active) {
+        Active = active;
+    }
 
     public String getEmail() {
         return Email;

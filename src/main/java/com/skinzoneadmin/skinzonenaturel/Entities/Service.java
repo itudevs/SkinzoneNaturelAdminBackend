@@ -20,6 +20,16 @@ public class Service {
 
     @Column(unique=false, nullable=false)
     private ServiceType Type;
+    @Column(unique=false, nullable=false)
+    private boolean Active=true;
+
+    public boolean isActive() {
+        return Active;
+    }
+
+    public void setActive(boolean active) {
+        Active = active;
+    }
 
     public int getServiceID() {
         return ServiceID;
