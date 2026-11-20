@@ -8,6 +8,9 @@ public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int UserId;
+
+    @Column(unique = true,nullable = false)
+    private String Firebase_uid;
     @Column(unique=true,nullable=false)
     private String Email;
     @Column(unique=false,nullable=false)
