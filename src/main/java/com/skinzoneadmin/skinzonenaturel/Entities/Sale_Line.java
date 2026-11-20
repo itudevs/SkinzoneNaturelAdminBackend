@@ -12,7 +12,7 @@ public class Sale_Line {
     @ManyToOne(fetch=FetchType.LAZY)
     private Sale Sale;
     //FK
-    @Column(unique=false, nullable=true)
+
     @ManyToOne(fetch=FetchType.LAZY)
     private Service Service;
 
