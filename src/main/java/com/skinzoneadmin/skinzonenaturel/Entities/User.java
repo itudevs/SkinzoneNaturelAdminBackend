@@ -1,4 +1,4 @@
-package main.java.Entities;
+package com.skinzoneadmin.skinzonenaturel.Entities;
 
 import jakarta.persistence.*;
 
@@ -13,6 +13,9 @@ public class User {
     private String Firebase_uid;
     @Column(unique=true,nullable=false)
     private String Email;
+
+
+
     @Column(unique=false,nullable=false)
     private String Name;
     @Column(unique=false,nullable=false)
@@ -57,10 +60,17 @@ public class User {
     public void setSurname(String surname) {
         Surname = surname;
     }
+    public String getFirebase_uid() {
+        return Firebase_uid;
+    }
 
+    public void setFirebase_uid(String firebase_uid) {
+        Firebase_uid = firebase_uid;
+    }
     public String getContactNumber() {
         return ContactNumber;
     }
+
 
     public void setContactNumber(String contactNumber) {
         ContactNumber = contactNumber;
