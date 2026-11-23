@@ -7,72 +7,75 @@ import jakarta.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private int UserId;
+    private int userId;
 
     @Column(unique = true,nullable = false)
-    private String Firebase_uid;
+    private String firebase_uid;
     @Column(unique=true,nullable=false)
-    private String Email;
+    private String email;
 
 
 
     @Column(unique=false,nullable=false)
-    private String Name;
+    private String name;
     @Column(unique=false,nullable=false)
-    private String Surname;
+    private String surname;
     @Column(unique=false,nullable=false,length = 10)
-    private String ContactNumber;
+    private String contactNumber;
     @Column(unique=false,nullable=false)
-    private boolean Active;
+    private boolean active;
 
     public boolean isActive() {
-        return Active;
+        return active;
     }
 
     public void setActive(boolean active) {
-        Active = active;
+        this.active = active;
     }
 
-    public String getEmail() {
-        return Email;
+    public String getContactNumber() {
+        return contactNumber;
     }
 
-    public void setEmail(String email) {
-        Email = email;
-    }
-
-    public int getUserId() {
-        return UserId;
-    }
-
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
     }
 
     public String getSurname() {
-        return Surname;
+        return surname;
     }
 
     public void setSurname(String surname) {
-        Surname = surname;
+        this.surname = surname;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getFirebase_uid() {
-        return Firebase_uid;
+        return firebase_uid;
     }
 
     public void setFirebase_uid(String firebase_uid) {
-        Firebase_uid = firebase_uid;
+        this.firebase_uid = firebase_uid;
     }
-    public String getContactNumber() {
-        return ContactNumber;
+
+    public int getUserId() {
+        return userId;
     }
 
 
-    public void setContactNumber(String contactNumber) {
-        ContactNumber = contactNumber;
-    }
 }

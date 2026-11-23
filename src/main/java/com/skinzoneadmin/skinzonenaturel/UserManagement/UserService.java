@@ -11,7 +11,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
     public boolean RegisterUser(RegisterUserDto user){
-        if(!userRepository.findByEmail(user.Email())){
+        if(userRepository.findUserByEmail(user.Email()).isEmpty()){
             try {
                 User NewUser = new User();
                 NewUser.setEmail(user.Email());

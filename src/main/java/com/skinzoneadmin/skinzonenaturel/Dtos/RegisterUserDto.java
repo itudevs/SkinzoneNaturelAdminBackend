@@ -1,5 +1,6 @@
 package com.skinzoneadmin.skinzonenaturel.Dtos;
 
+
 public record RegisterUserDto(
         String Uid,
         String Email,

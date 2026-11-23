@@ -34,6 +34,7 @@ public class FirebaseAuthenticationFilter extends OncePerRequestFilter {
         }
         String authToken = header.substring(7);
         try{
+
            FirebaseToken decoded=firebaseAuthService.verifyToken(authToken);
            //create authentication object from verified token from firbase for spring security
             //credentials represents credentials such as email or password
@@ -43,6 +44,7 @@ public class FirebaseAuthenticationFilter extends OncePerRequestFilter {
            //indication of authenticated user to spring security
            SecurityContextHolder.getContext().setAuthentication(authentication);
         }catch(FirebaseAuthException e){
+            e.printStackTrace();
             SecurityContextHolder.clearContext();
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             response.setContentType("application/json");
