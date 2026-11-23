@@ -6,8 +6,7 @@ public record LoginUserDto(
          String Email,
          String Name,
          String Surname,
-         String ContactNumber,
-         boolean Active
+         String ContactNumber
 ) {
 
 }

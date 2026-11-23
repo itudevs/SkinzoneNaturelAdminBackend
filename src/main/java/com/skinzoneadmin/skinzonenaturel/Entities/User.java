@@ -10,7 +10,7 @@ public class User {
     private int userId;
 
     @Column(unique = true,nullable = false)
-    private String firebase_uid;
+    private String firebaseUid;
     @Column(unique=true,nullable=false)
     private String email;
 
@@ -65,12 +65,12 @@ public class User {
         this.email = email;
     }
 
-    public String getFirebase_uid() {
-        return firebase_uid;
+    public String getFirebaseUid() {
+        return firebaseUid;
     }
 
-    public void setFirebase_uid(String firebase_uid) {
-        this.firebase_uid = firebase_uid;
+    public void setFirebaseUid(String firebase_uid) {
+        this.firebaseUid = firebase_uid;
     }
 
     public int getUserId() {
