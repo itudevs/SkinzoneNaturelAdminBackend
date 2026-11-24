@@ -22,7 +22,7 @@ public class SecurityConfig {
        return new FirebaseAuthenticationFilter(firebaseAuthService);
    }
    @Bean
-    public SecurityFilterChain securityFilterChain(FirebaseAuthenticationFilter firebaseAuthenticationFilter, HttpSecurity http) throws IOException {
+    public SecurityFilterChain securityFilterChain(FirebaseAuthenticationFilter firebaseAuthenticationFilter, HttpSecurity http) throws Exception {
        http   .cors(cors -> cors.configurationSource(webConfiguration.corsConfigurationSource()))
                .csrf(csrf -> csrf.disable()).sessionManagement(session->session.sessionCreationPolicy(
                SessionCreationPolicy.STATELESS

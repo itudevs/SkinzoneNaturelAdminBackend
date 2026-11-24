@@ -5,6 +5,7 @@ import com.skinzoneadmin.skinzonenaturel.Dtos.RegisterUserDto;
 import com.skinzoneadmin.skinzonenaturel.Entities.User;
 import com.skinzoneadmin.skinzonenaturel.Firebase.FirebaseAuthService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -14,8 +15,9 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
     private FirebaseAuthService firebaseAuthService;
-    public boolean RegisterUser(RegisterUserDto user){
-        if(userRepository.findUserByEmail(user.Email()).isEmpty()){
+    public boolean RegisterUser(RegisterUserDto user, Authentication authentication){
+        //find user linked to firebase id to avoid any injection of details from another user
+        if(userRepository.findUserByFirebaseUid(authentication.getName()).isEmpty()){
             try {
                 User NewUser = new User();
                 NewUser.setEmail(user.Email());
@@ -23,6 +25,7 @@ public class UserService {
                 NewUser.setSurname(user.Surname());
                 NewUser.setContactNumber(String.valueOf(user.ContactNumber()));
                 NewUser.setFirebaseUid(user.Uid());
+                NewUser.setActive(true); //TODO set false later so when newly registered user is not active when registered
                 userRepository.save(NewUser);
                 return true;
             }catch (Exception e){

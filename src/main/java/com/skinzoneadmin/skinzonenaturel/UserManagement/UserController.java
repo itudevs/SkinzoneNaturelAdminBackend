@@ -16,7 +16,7 @@ public class UserController {
 
    @PostMapping("/register")
     public Boolean registerUser(@RequestBody RegisterUserDto user, Authentication authentication) throws IOException {
-       return userService.RegisterUser(user);
+       return userService.RegisterUser(user,authentication);
    }
 
     @PostMapping("/login")
