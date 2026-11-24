@@ -33,8 +33,8 @@ public class StockService {
       return productDtoList;
     }
 
-    public ProductDto updateProductById(ProductDto productDto,Integer productId){
-        Optional<Product> product=stockRepository.findById(productId);
+    public ProductDto updateProductById(ProductDto productDto){
+        Optional<Product> product=stockRepository.findById(productDto.productId());
         if(product.isPresent()){
             try{
               Product foundProduct=product.get();
@@ -64,5 +64,34 @@ public class StockService {
             return null;
         }
 
+    }
+    public Boolean deleteProductById(Integer productId){
+      Optional<Product> product=stockRepository.findById(productId);
+      if(product.isPresent()){
+          com.skinzoneadmin.skinzonenaturel.Entities.Service service=product.get().getService();
+          service.setActive(false);
+          serviceRepository.save(service);
+          return true;
+      }else{
+          return false;
+      }
+    }
+    public ProductDto addProduct(ProductDto productDto){
+
+        Optional<com.skinzoneadmin.skinzonenaturel.Entities.Service> service=serviceRepository.findServiceByName(productDto.productName());
+        if(service.isEmpty()){
+            com.skinzoneadmin.skinzonenaturel.Entities.Service newService=new com.skinzoneadmin.skinzonenaturel.Entities.Service();
+            newService.setName(productDto.productName());
+            newService.setRetailPrice(productDto.retailPrice());
+            serviceRepository.save(newService);
+            Product newProduct=new Product();
+            newProduct.setService(newService);
+            newProduct.setQuantity(productDto.productQuantity());
+            newProduct.setDateReceived(productDto.dateReceived());
+            newProduct.setClinicalPrice(productDto.clinicalPrice());
+            stockRepository.save(newProduct);
+            return productDto;
+        }
+        return null;
     }
 }
