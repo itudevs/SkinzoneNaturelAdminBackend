@@ -7,21 +7,24 @@ import jakarta.persistence.*;
 public class Product_Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Product_Category_ID;
+    private int productCategory_ID;
 
     @Column(unique = true,nullable = false)
-    private String Product_Category_Name;
+    private String productCategoryName;
 
-    public int getProduct_Category_ID() {
-        return Product_Category_ID;
+    public int getProductCategory_ID() {
+        return productCategory_ID;
     }
 
-
-    public String getProduct_Category_Name() {
-        return Product_Category_Name;
+    public void setProductCategory_ID(int productCategory_ID) {
+        this.productCategory_ID = productCategory_ID;
     }
 
-    public void setProduct_Category_Name(String product_Category_Name) {
-        Product_Category_Name = product_Category_Name;
+    public String getProductCategoryName() {
+        return productCategoryName;
+    }
+
+    public void setProductCategoryName(String productCategoryName) {
+        this.productCategoryName = productCategoryName;
     }
 }
