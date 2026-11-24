@@ -7,6 +7,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ProductCategoryRepository extends JpaRepository<Product_Category,Integer> {
-    List<Product_Category> findAll(Integer id);
+
     Optional<Product_Category> findByProductCategoryName(String productCategoryName);
 }
