@@ -8,64 +8,64 @@ import jakarta.persistence.*;
 public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ServiceID;
+    private int serviceID;
 
     @Column(unique=false, nullable=false)
-    private String Name;
+    private String name;
     @Column(unique=false, nullable=false)
-    private Float Discount;
+    private Float discount;
 
     @Column(unique=false, nullable=false)
-    private Float RetailPrice;
+    private Float retailPrice;
 
     @Column(unique=false, nullable=false)
-    private ServiceType Type;
+    private ServiceType type;
     @Column(unique=false, nullable=false)
-    private boolean Active=true;
-
-    public boolean isActive() {
-        return Active;
-    }
-
-    public void setActive(boolean active) {
-        Active = active;
-    }
+    private boolean active=true;
 
     public int getServiceID() {
-        return ServiceID;
+        return serviceID;
     }
 
 
-
-    public ServiceType getType() {
-        return Type;
-    }
-
-    public void setType(ServiceType type) {
-        Type = type;
-    }
-
-    public Float getRetailPrice() {
-        return RetailPrice;
-    }
-
-    public void setRetailPrice(Float retailPrice) {
-        RetailPrice = retailPrice;
-    }
-
-    public Float getDiscount() {
-        return Discount;
-    }
-
-    public void setDiscount(Float discount) {
-        Discount = discount;
-    }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
+    }
+
+    public Float getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Float discount) {
+        this.discount = discount;
+    }
+
+    public Float getRetailPrice() {
+        return retailPrice;
+    }
+
+    public void setRetailPrice(Float retailPrice) {
+        this.retailPrice = retailPrice;
+    }
+
+    public ServiceType getType() {
+        return type;
+    }
+
+    public void setType(ServiceType type) {
+        this.type = type;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }
