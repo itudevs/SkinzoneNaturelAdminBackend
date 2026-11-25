@@ -30,7 +30,7 @@ public class TreatmentListService {
             return treatmentCategoryDtos;
         }else{
             for(Treatment_Category treatmentCategory:optionalTreatmentCategory){
-                int numberOfTreatmentsInCategory=treatmentRepository.findAllTreatmentByCategory(treatmentCategory).size();
+                int numberOfTreatmentsInCategory=serviceRepository.findAllByTypeAndActive(ServiceType.TREATMENT, true).size();
                 treatmentCategoryDtos.add(new TreatmentCategoryDto(treatmentCategory.getCategoryName(),numberOfTreatmentsInCategory));
             }
             return treatmentCategoryDtos;
@@ -44,16 +44,21 @@ public class TreatmentListService {
         }else{
             for(Treatment treatment:optionalTreatment){
                 com.skinzoneadmin.skinzonenaturel.Entities.Service service=treatment.getService();
-                treatmentDtos.add(new TreatmentUndetailedDto(treatment.getId(), service.getName(), service.getRetailPrice()));
+                if(service.isActive()){
+                    treatmentDtos.add(new TreatmentUndetailedDto(treatment.getId(), service.getName(), service.getRetailPrice()));
+                }
+
             }
             return treatmentDtos;
         }
     }
     public Boolean addTreatmentCategory(String categoryName){
         try{
+            System.err.println("received name:"+categoryName);
             String newCategory=categoryName.toUpperCase();
             Treatment_Category treatmentCategory=new Treatment_Category();
             treatmentCategory.setCategoryName(newCategory);
+            System.err.println("stored name:"+treatmentCategory.getCategoryName());
             treatmentCategoryRepository.save(treatmentCategory);
             return true;
         }catch(Exception ex){
