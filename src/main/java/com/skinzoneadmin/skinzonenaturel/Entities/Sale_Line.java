@@ -7,44 +7,45 @@ import jakarta.persistence.*;
 public class Sale_Line {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private int Sale_LineID;
+    private int saleLineID;
     //FK
     @ManyToOne(fetch=FetchType.LAZY)
-    private Sale Sale;
+    private Sale sale;
     //FK
 
     @ManyToOne(fetch=FetchType.LAZY)
-    private Service Service;
+    private Service service;
 
     @Column(unique=false, nullable=false)
-    private Float Amount;
+    private Float amount;
 
-    public int getSale_LineID() {
-        return Sale_LineID;
+    public int getSaleLineID() {
+        return saleLineID;
     }
 
 
-    public Sale getSale() {
-        return Sale;
-    }
-
-    public void setSale(Sale sale) {
-        Sale = sale;
-    }
-
-    public Service getService() {
-        return Service;
-    }
-
-    public void setService(Service service) {
-        Service = service;
-    }
 
     public Float getAmount() {
-        return Amount;
+        return amount;
     }
 
     public void setAmount(Float amount) {
-        Amount = amount;
+        this.amount = amount;
+    }
+
+    public Service getService() {
+        return service;
+    }
+
+    public void setService(Service service) {
+        this.service = service;
+    }
+
+    public Sale getSale() {
+        return sale;
+    }
+
+    public void setSale(Sale sale) {
+        this.sale = sale;
     }
 }

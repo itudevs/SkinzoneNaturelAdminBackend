@@ -7,41 +7,65 @@ import jakarta.persistence.*;
 public class Client {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private int ClientID;
+    private int id;
     @Column(unique=false, nullable=false)
-    private String ClientName;
+    private String name;
     @Column(unique=false, nullable=false)
-    private String ClientSurname;
+    private String surname;
     @Column(unique=true, nullable=false,length = 10)
-    private String ClientPhone;
+    private String phone;
 
-    public int getClientID() {
-        return ClientID;
+    @Column(unique=true, nullable=false)
+    private String email;
+
+    @Column(unique=true, nullable=false)
+    private String address;
+
+    public int getId() {
+        return id;
     }
 
-
-
-    public String getClientName() {
-        return ClientName;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setClientName(String clientName) {
-        ClientName = clientName;
+    public String getName() {
+        return name;
     }
 
-    public String getClientSurname() {
-        return ClientSurname;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setClientSurname(String surname) {
-        ClientSurname = surname;
+    public String getSurname() {
+        return surname;
     }
 
-    public String getClientPhone() {
-        return ClientPhone;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    public void setClientPhone(String clientPhone) {
-        ClientPhone = clientPhone;
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

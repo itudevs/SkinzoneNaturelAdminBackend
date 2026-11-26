@@ -11,17 +11,38 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int TransactionId;
+    private int transactionId;
 
     @Column(unique = false,nullable = false)
-    private Date TransactionDate;
+    private Date transactionDate;
 
     @Column(unique = false,nullable = false)
-    private LocalTime TransactionTime;
+    private LocalTime transactionTime;
     //only fetches the entity when code explicitly calls it
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(unique = false, nullable = false)
     private User user;
+
+    public int getTransactionId() {
+        return transactionId;
+    }
+
+
+    public Date getTransactionDate() {
+        return transactionDate;
+    }
+
+    public void setTransactionDate(Date transactionDate) {
+        this.transactionDate = transactionDate;
+    }
+
+    public LocalTime getTransactionTime() {
+        return transactionTime;
+    }
+
+    public void setTransactionTime(LocalTime transactionTime) {
+        this.transactionTime = transactionTime;
+    }
 
     public User getUser() {
         return user;
@@ -30,25 +51,4 @@ public class Transaction {
     public void setUser(User user) {
         this.user = user;
     }
-
-    public LocalTime getTransactionTime() {
-        return TransactionTime;
-    }
-
-    public void setTransactionTime(LocalTime transactionTime) {
-        TransactionTime = transactionTime;
-    }
-
-    public Date getTransactionDate() {
-        return TransactionDate;
-    }
-
-    public void setTransactionDate(Date transactionDate) {
-        TransactionDate = transactionDate;
-    }
-
-    public int getTransactionId() {
-        return TransactionId;
-    }
-
 }
