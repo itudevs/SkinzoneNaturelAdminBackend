@@ -2,6 +2,7 @@ package com.skinzoneadmin.skinzonenaturel.Entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
 
@@ -14,7 +15,7 @@ public class Transaction {
     private int transactionId;
 
     @Column(unique = false,nullable = false)
-    private Date transactionDate;
+    private LocalDate transactionDate;
 
     @Column(unique = false,nullable = false)
     private LocalTime transactionTime;
@@ -28,11 +29,11 @@ public class Transaction {
     }
 
 
-    public Date getTransactionDate() {
+    public LocalDate getTransactionDate() {
         return transactionDate;
     }
 
-    public void setTransactionDate(Date transactionDate) {
+    public void setTransactionDate(LocalDate transactionDate) {
         this.transactionDate = transactionDate;
     }
 

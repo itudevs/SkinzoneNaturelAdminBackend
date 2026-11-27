@@ -9,68 +9,67 @@ import java.time.LocalDate;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ProductID;
+    private int productID;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private Service Service;
+    private Service service;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private Product_Category ProductCategory;
+    private Product_Category productCategory;
 
     @Column(unique = false,nullable = false)
-    private LocalDate DateReceived;
+    private LocalDate dateReceived;
 
     @Column(unique = false,nullable = false)
-    private int Quantity;
+    private int quantity;
 
     @Column(unique = false,nullable = false)
-    private Float ClinicalPrice;
-
+    private Float clinicalPrice;
 
 
     public int getProductID() {
-        return ProductID;
+        return productID;
     }
 
 
 
     public Float getClinicalPrice() {
-        return ClinicalPrice;
+        return clinicalPrice;
     }
 
     public void setClinicalPrice(Float clinicalPrice) {
-        ClinicalPrice = clinicalPrice;
+        this.clinicalPrice = clinicalPrice;
     }
 
     public int getQuantity() {
-        return Quantity;
+        return quantity;
     }
 
     public void setQuantity(int quantity) {
-        Quantity = quantity;
-    }
-
-    public LocalDate getDateReceived() {
-        return DateReceived;
-    }
-
-    public void setDateReceived(LocalDate dateReceived) {
-        DateReceived = dateReceived;
+        this.quantity = quantity;
     }
 
     public Product_Category getProductCategory() {
-        return ProductCategory;
+        return productCategory;
     }
 
     public void setProductCategory(Product_Category productCategory) {
-        ProductCategory = productCategory;
+        this.productCategory = productCategory;
+    }
+
+    public LocalDate getDateReceived() {
+        return dateReceived;
+    }
+
+    public void setDateReceived(LocalDate dateReceived) {
+        this.dateReceived = dateReceived;
     }
 
     public Service getService() {
-        return Service;
+        return service;
     }
 
     public void setService(Service service) {
-        Service = service;
+        this.service = service;
     }
 }

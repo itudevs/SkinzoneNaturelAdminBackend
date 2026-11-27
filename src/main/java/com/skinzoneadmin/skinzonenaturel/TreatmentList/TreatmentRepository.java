@@ -9,4 +9,6 @@ import java.util.List;
 
 public interface TreatmentRepository extends JpaRepository<Treatment, Integer> {
      List<Treatment> findAllTreatmentByCategory(Treatment_Category treatmentCategory);
+
+    List<Treatment> findAllTreatmentByService_ServiceID(int serviceServiceID);
 }

@@ -5,6 +5,7 @@ import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,6 +25,16 @@ public class ClientForm {
     private Map<String,Object> answers=new HashMap<>();
     @ManyToOne(fetch = FetchType.LAZY)
     private Client client;
+    @Column(nullable = false)
+    private LocalTime time;
+
+    public LocalTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalTime time) {
+        this.time = time;
+    }
 
     public Client getClient() {
         return client;
